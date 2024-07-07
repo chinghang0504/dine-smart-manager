@@ -1,0 +1,16 @@
+@use './styles/partials/fonts' as *;
+
+// General Elements
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family-options;
+}
+
+ul {
+    list-style: none;
+}
