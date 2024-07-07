@@ -1,34 +1,21 @@
-import { useState } from "react";
 import "./Menu.scss";
-import { useEffect } from "react";
-import { getAllFoodTypes } from '../../services/server';
+import { Link, NavLink, Outlet } from "react-router-dom";
 
 function Menu() {
-  const [foodTypes, setFoodTypes] = useState([]);
-
-  useEffect(() => {
-    async function loadData() {
-      const foodTypes = await getAllFoodTypes();
-      setFoodTypes(foodTypes);
-    }
-    loadData();
-  });
-
   return (
-    <>
-      <div>Menu</div>
-      {foodTypes.map((foodType, index) => {
-        return (
-          <div key={index}>
-            <p>{foodType.id}</p>
-            <p>{foodType.type}</p>
-            <p>{foodType.image}</p>
-            <p>{foodType.priority}</p>
-          </div>
-        );
-      })}
-    </>
-
+    <div className="menu">
+      <div className="menu-header">
+        <h1 className="menu-header__title">Menu Data</h1>
+        <nav className="menu-nav">
+          <ul className="menu-nav__list">
+            <li className="menu-nav__item"><NavLink className={({ isActive }) => (isActive ? 'menu-nav__link menu-nav__link--active' : 'menu-nav__link')} to="/menu/foodtypes">Food Types</NavLink></li>
+            <li className="menu-nav__item"><NavLink className={({ isActive }) => (isActive ? 'menu-nav__link menu-nav__link--active' : 'menu-nav__link')} to="/menu/fooditems">Food Items</NavLink></li>
+          </ul>
+        </nav>
+        <Link className="menu-header__link" to="/menu/addfoodtype">+ Add New Food Type</Link>
+      </div>
+      <Outlet />
+    </div>
   )
 }
 
