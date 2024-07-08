@@ -25,7 +25,7 @@ function FoodItems() {
 
   // Click the edit button
   function clickEditButton(id) {
-    navigate(`/menu/editfooditem?id=${id}`);
+    navigate(`/menu/fooditems/edit?id=${id}`);
   }
 
   // Execute once

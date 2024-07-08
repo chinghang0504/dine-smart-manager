@@ -23,11 +23,11 @@ function App() {
           <Route path="/menu" element={<Menu />}>
             <Route path="" element={<Navigate to="/menu/foodtypes" />} />
             <Route path='foodtypes' element={<FoodTypes />} />
-            <Route path='addfoodtype' element={<AddFoodType />} />
-            <Route path='editfoodtype' element={<EditFoodType />} />
+            <Route path='foodtypes/add' element={<AddFoodType />} />
+            <Route path='foodtypes/edit' element={<EditFoodType />} />
             <Route path='fooditems' element={<FoodItems />} />
-            <Route path='addfooditem' element={<AddFoodItem />} />
-            <Route path='editfooditem' element={<EditFoodItem />} />
+            <Route path='fooditems/add' element={<AddFoodItem />} />
+            <Route path='fooditems/edit' element={<EditFoodItem />} />
             <Route path='*' element={<Navigate to="/menu/foodtypes" />} />
           </Route>
           <Route path="/tools" element={<Tools />} />

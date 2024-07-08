@@ -25,7 +25,7 @@ function FoodTypes() {
 
   // Click the edit button
   function clickEditButton(id) {
-    navigate(`/menu/editfoodtype?id=${id}`);
+    navigate(`/menu/foodtypes/edit?id=${id}`);
   }
 
   // Execute once
@@ -57,7 +57,10 @@ function FoodTypes() {
             </div>
             <div className='food-types-type__content-container food-types-type__content-container--image'>
               <p className='food-types-type__title'>Image:</p>
-              <img className='food-types-type__image' src={`${import.meta.env.VITE_SERVER_URL}/foodtypes/${foodType.image}`} alt={foodType.type} />
+              { foodType.image ? 
+                <img className='food-types-type__image' src={`${import.meta.env.VITE_SERVER_URL}/foodtypes/${foodType.image}`} alt={foodType.type} /> :
+                <p className='food-types-type__description'>No image available</p>
+              }
               <p className='food-types-type__description'>{foodType.image}</p>
             </div>
             <div className='food-types-type__content-container'>
