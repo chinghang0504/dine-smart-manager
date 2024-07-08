@@ -8,6 +8,7 @@ import FoodTypes from './components/FoodTypes/FoodTypes';
 import FoodItems from './components/FoodItems/FoodItems';
 import AddFoodType from './components/AddFoodType/AddFoodType';
 import EditFoodType from './components/EditFoodType/EditFoodType';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function App() {
   return (

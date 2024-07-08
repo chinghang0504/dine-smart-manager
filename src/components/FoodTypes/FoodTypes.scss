@@ -1,2 +1,47 @@
-@use '../../styles/partials/breakpoints' as *;
-@use '../../styles/partials/colors' as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/colors" as *;
+
+// Food Types
+.food-types {
+}
+
+// Food Types Header
+.food-types-header {
+  display: none;
+  background-color: $secondary-color-gray;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @include tablet {
+    display: block;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    width: 20%;
+    text-align: center;
+  }
+}
+
+// Food Types Type
+.food-types-type {
+  display: flex;
+  flex-direction: column;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @include tablet {
+    flex-direction: row;
+  }
+  
+  &__item {
+    width: 20%;
+  }
+
+  &__image {
+    width: 100px;
+  }
+}

@@ -12,7 +12,7 @@ function Menu() {
             <li className="menu-nav__item"><NavLink className={({ isActive }) => (isActive ? 'menu-nav__link menu-nav__link--active' : 'menu-nav__link')} to="/menu/fooditems">Food Items</NavLink></li>
           </ul>
         </nav>
-        <Link className="menu-header__link" to="/menu/addfoodtype">+ Add New Food Type</Link>
+        <Link className="menu-header__link" to="/menu/addfoodtype">+ Add New Type</Link>
       </div>
       <Outlet />
     </div>

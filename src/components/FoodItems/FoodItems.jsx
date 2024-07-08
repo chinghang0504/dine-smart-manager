@@ -11,7 +11,7 @@ function FoodItems() {
       setFoodItems(foodItems);
     }
     loadData();
-  });
+  }, []);
 
   return (
     <div className="food-items">
