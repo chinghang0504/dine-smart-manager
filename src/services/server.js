@@ -41,12 +41,12 @@ export async function createFoodItem(name, description, price, image, priority, 
 
 // Delete a food item (Manager)
 export async function deleteFoodItem(id) {
-    const res = await axios.delete(`${SERVER_URL}/manager/menu/fooditems`, { id });
+    const res = await axios.delete(`${SERVER_URL}/manager/menu/fooditems`, { data: { id }});
     return res.data;
 }
 
 // Modify a food item (Manager)
 export async function modifyFoodItem(id, name, description, price, image, priority, type) {
-    const res = await axios.put(`${SERVER_URL}/manager/menu/fooditems`, { data: { id, name, description, price, image, priority, type } });
+    const res = await axios.put(`${SERVER_URL}/manager/menu/fooditems`, { id, name, description, price, image, priority, type });
     return res.data;
 }
