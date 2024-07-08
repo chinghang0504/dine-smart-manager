@@ -1,0 +1,67 @@
+@use './styles/partials/fonts' as *;
+@use './styles/partials/breakpoints' as *;
+
+// General Elements
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family-options;
+}
+
+ul {
+    list-style: none;
+}
+
+h1 {
+    font-size: 28px;
+    line-height: 36px;
+
+    @include tablet {
+        font-size: 32px;
+        line-height: 40px;
+    }
+}
+
+h2 {
+    font-size: 20px;
+    line-height: 28px;
+
+    @include tablet {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+h3 {
+    font-size: 13px;
+    line-height: 20px;
+
+    @include tablet {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+h4 {
+    font-size: 11px;
+    line-height: 16px;
+
+    @include tablet {
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+h4 {
+    font-size: 15px;
+    line-height: 26px;
+
+    @include tablet {
+        font-size: 16px;
+        line-height: 28px;
+    }
+}

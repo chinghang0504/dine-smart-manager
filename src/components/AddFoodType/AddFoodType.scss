@@ -1,0 +1,111 @@
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/colors" as *;
+
+// Add Food Type
+.add-food-type {
+}
+
+// Add Food Type Header
+.add-food-type-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid gray;
+
+  &__link {
+  }
+
+  &__title {
+    padding-left: 16px;
+  }
+}
+
+// Add Food Type Form
+.add-food-type-form {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__left-container,
+  &__right-container {
+    @include tablet {
+      width: 50%;
+    }
+  }
+
+  &__left-container {
+    @include tablet {
+      padding-right: 16px;
+    }
+  }
+
+  &__right-container {
+    @include tablet {
+      padding-left: 16px;
+      border-left: 1px solid gray;
+    }
+  }
+
+  &__content-container {
+  }
+
+  &__label {
+    display: block;
+  }
+
+  &__input {
+    width: 100%;
+  }
+
+  &__status {
+    color: red;
+  }
+
+  &__image {
+    width: 100%;
+    padding-top: 8px;
+  }
+
+  &__description {
+  }
+
+  &__action-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 32px;
+    padding-bottom: 16px;
+  }
+
+  &__link {
+  }
+
+  &__button {
+    background-color: $primary-color-maxican-red;
+    color: white;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 16px;
+    border: none;
+    margin-left: 8px;
+    margin-right: 8px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $secondary-color-maxican-red;
+    }
+  }
+}

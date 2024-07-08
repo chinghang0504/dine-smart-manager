@@ -1,0 +1,19 @@
+// Font Family
+$font-family-options: 'BioRhyme', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+// Font Face
+@font-face {
+    font-family: 'BioRhyme';
+    src: url(/src/assets/fonts/BioRhyme-Regular.ttf) format('truetype');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'BioRhyme';
+    src: url(/src/assets/fonts/BioRhyme-SemiBold.ttf) format('truetype');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'BioRhyme';
+    src: url(/src/assets/fonts/BioRhyme-Bold.ttf) format('truetype');
+    font-weight: 700;
+}

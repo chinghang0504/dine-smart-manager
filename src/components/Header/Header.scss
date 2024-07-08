@@ -1,0 +1,93 @@
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/colors" as *;
+
+// Header
+.header {
+  background-color: $primary-color-maxican-red;
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+  padding-bottom: 80px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @include tablet {
+    flex-direction: row;
+  }
+}
+
+// Header Logo
+.header-logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  @include tablet {
+    justify-content: flex-start;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+  }
+
+  &__image {
+    width: 50px;
+  }
+
+  &__title {
+  }
+}
+
+// Header Navigation
+.header-nav {
+  width: 100%;
+  padding-top: 16px;
+
+  @include tablet {
+    padding-top: 0;
+  }
+
+  &__nav {
+    height: 100%;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+
+    @include tablet {
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    // width: 50%;
+    width: 100%;
+    text-align: center;
+
+    @include tablet {
+      width: 150px;
+    }
+  }
+
+  &__link {
+    display: block;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__link--active {
+    background-color: $secondary-color-maxican-red;
+  }
+}
