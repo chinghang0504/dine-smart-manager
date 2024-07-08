@@ -1,8 +1,34 @@
-# React + Vite
+# DineSmart - Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Setup
 
-Currently, two official plugins are available:
+### Create a .env file
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Create a .env file in the root directory of your project.
+2. Add the following content to the .env file:
+
+```shell
+# Server Details
+VITE_SERVER_URL=http://localhost:8080
+```
+
+- The variables should match those in the .env.sample file.
+- Ensure you update the VITE_SERVER_URL to reflect your actual server URL.
+
+### Install Dependencies
+
+To install all the required packages, run the following command:
+
+```bash
+npm install
+```
+
+### Run in Development Mode
+
+To start the application in development mode, run:
+
+```bash
+npm run dev
+```
+
+This will start the development server and allow you to view your application in the browser.
