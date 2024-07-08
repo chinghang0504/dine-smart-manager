@@ -1,2 +1,124 @@
-@use '../../styles/partials/breakpoints' as *;
-@use '../../styles/partials/colors' as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/colors" as *;
+
+// Food Items
+.food-items {
+}
+
+// Food Items Header
+.food-items-header {
+  display: none;
+  background-color: $secondary-color-gray;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @include tablet {
+    display: block;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    flex: 1;
+    font-weight: 700;
+
+    &--image {
+      flex: 2;
+    }
+  }
+}
+
+// Food Items Item
+.food-items-item {
+  display: flex;
+  flex-direction: column;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid gray;
+  gap: 8px;
+
+  &:hover {
+    background-color: #e9b2af;
+  }
+
+  @include tablet {
+    flex-direction: row;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  &__content-container {
+    padding-top: 8px;
+
+    @include tablet {
+      padding-top: 0;
+      flex: 1;
+    }
+
+    &--image {
+      @include tablet {
+        flex: 2;
+      }
+    }
+  }
+
+  &__action-container {
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+      justify-content: start;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__description {
+    font-weight: 400;
+    overflow-wrap: anywhere;
+  }
+
+  &__image {
+    width: 100px;
+  }
+
+  &__button {
+    color: white;
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    
+    @include tablet {
+      margin-right: 8px;
+    }
+
+    &--edit {
+      background-color: #4caf50;
+
+      &:hover {
+        background-color: #45a049;
+      }
+    }
+
+    &--delete {
+      background-color: #f44336;
+
+      &:hover {
+        background-color: #d32f2f;
+      }
+    }
+  }
+}

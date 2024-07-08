@@ -5,9 +5,11 @@ import Orders from './pages/Orders/Orders';
 import Menu from './pages/Menu/Menu';
 import Tools from './pages/Tools/Tools';
 import FoodTypes from './components/FoodTypes/FoodTypes';
-import FoodItems from './components/FoodItems/FoodItems';
 import AddFoodType from './components/AddFoodType/AddFoodType';
 import EditFoodType from './components/EditFoodType/EditFoodType';
+import FoodItems from './components/FoodItems/FoodItems';
+import AddFoodItem from './components/AddFoodItem/AddFoodItem';
+import EditFoodItem from './components/EditFoodItem/EditFoodItem';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function App() {
@@ -21,9 +23,11 @@ function App() {
           <Route path="/menu" element={<Menu />}>
             <Route path="" element={<Navigate to="/menu/foodtypes" />} />
             <Route path='foodtypes' element={<FoodTypes />} />
-            <Route path='fooditems' element={<FoodItems />} />
             <Route path='addfoodtype' element={<AddFoodType />} />
             <Route path='editfoodtype' element={<EditFoodType />} />
+            <Route path='fooditems' element={<FoodItems />} />
+            <Route path='addfooditem' element={<AddFoodItem />} />
+            <Route path='editfooditem' element={<EditFoodItem />} />
             <Route path='*' element={<Navigate to="/menu/foodtypes" />} />
           </Route>
           <Route path="/tools" element={<Tools />} />
