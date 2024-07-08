@@ -1,12 +1,13 @@
 import { Link, useNavigate } from 'react-router-dom';
 import './AddFoodItem.scss';
-import { useState } from 'react';
-import { createFoodItem } from '../../services/server';
+import { useEffect, useState } from 'react';
+import { createFoodItem, getAllFoodTypes } from '../../services/server';
 
 function AddFoodItem() {
   const navigate = useNavigate();
   const [imageUrl, setImageIUrl] = useState('');
   const [showErrorMessage, setShowErrorMessage] = useState(false);
+  const [foodTypes, setFoodTypes] = useState([]);
 
   function changeImageUrl(event) {
     setImageIUrl(`${import.meta.env.VITE_SERVER_URL}/fooditems/${event.target.value}`);
@@ -33,6 +34,15 @@ function AddFoodItem() {
       setShowErrorMessage(true);
     }
   }
+
+  async function loadData() {
+    const foodTypes = await getAllFoodTypes();
+    setFoodTypes(foodTypes);
+  }
+
+  useEffect(() => {
+    loadData();
+  })
 
   return (
     <div className='add-food-item'>
@@ -64,7 +74,13 @@ function AddFoodItem() {
             </div>
             <div className='add-food-item-form__content-container'>
               <label className='add-food-item-form__label' htmlFor='type'>Type:</label>
-              <input className='add-food-item-form__input' type="text" id='type' name='type' />
+              <select className='add-food-item-form__select' name="type" id="type">
+                { foodTypes.map((foodType, index) => {
+                  return (
+                    <option key={index} value={foodType.type}>{foodType.type}</option>
+                  )
+                })}
+              </select>
             </div>
           </div>
           <div className='add-food-item-form__right-container'>
