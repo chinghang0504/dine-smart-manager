@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import './FoodItems.scss';
 import { getAllFoodItems, deleteFoodItem } from '../../services/server';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 function FoodItems() {
   const [foodItems, setFoodItems] = useState([]);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   // Load the data
   async function loadData() {
@@ -23,10 +23,10 @@ function FoodItems() {
     }
   }
 
-  // Click the edit button
-  function clickEditButton(id) {
-    navigate(`/menu/fooditems/edit?id=${id}`);
-  }
+  // // Click the edit button
+  // function clickEditButton(id) {
+  //   navigate(`/menu/fooditems/edit?id=${id}`);
+  // }
 
   // Execute once
   useEffect(() => {
@@ -86,7 +86,7 @@ function FoodItems() {
             <div className='food-items-item__content-container'>
               <p className='food-items-item__title'>Actions:</p>
               <div className='food-items-item__action-container'>
-                <button className="food-items-item__button food-items-item__button--edit" onClick={() => clickEditButton(foodItem.id)}><i className="bi bi-pencil"></i> Edit</button>
+                {/* <button className="food-items-item__button food-items-item__button--edit" onClick={() => clickEditButton(foodItem.id)}><i className="bi bi-pencil"></i> Edit</button> */}
                 <button className="food-items-item__button food-items-item__button--delete" onClick={() => clickDeleteButton(foodItem.id)}><i className="bi bi-pencil"></i> Delete</button>
               </div>
             </div>
