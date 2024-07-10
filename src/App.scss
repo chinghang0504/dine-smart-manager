@@ -65,3 +65,7 @@ h4 {
         line-height: 28px;
     }
 }
+
+input, input::placeholder, select {
+    font-family: $font-family-options;
+}
