@@ -69,11 +69,17 @@ function FoodItems() {
             </div>
             <div className='food-items-item__content-container food-items-item__content-container--image'>
               <p className='food-items-item__title'>Image:</p>
-              { foodItem.image ? 
-                <img className='food-items-item__image' src={`${import.meta.env.VITE_SERVER_URL}/fooditems/${foodItem.image}`} alt={foodItem.name} /> :
-                <p className='food-items-item__description'>No image available</p>
+              {foodItem.image ?
+                <div>
+                  <img className='food-items-item__image' src={`${import.meta.env.VITE_SERVER_URL}/fooditems/${foodItem.image}`} alt={foodItem.name} />
+                  <p className='food-items-item__description'>{foodItem.image}</p>
+                </div>
+                :
+                <div>
+                  <img className='food-items-item__image' src={`${import.meta.env.VITE_SERVER_URL}/placeholder.png`} alt="No image available" />
+                  <p className='food-items-item__description'>No image available</p>
+                </div>
               }
-              <p className='food-items-item__description'>{foodItem.image}</p>
             </div>
             <div className='food-items-item__content-container'>
               <p className='food-items-item__title'>Priority:</p>
