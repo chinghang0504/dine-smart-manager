@@ -11,7 +11,7 @@ function Orders() {
   useEffect(() => {
     const socket = socketIOClient(ENDPOINT);
     socket.on('FromAPI', (data) => {
-      response.push(data);
+      response.unshift(data);
       setResponse([...response]);
       console.log(response);
     });
@@ -29,17 +29,21 @@ function Orders() {
               <img className='orders-content__image' src={EmptyOrderImage} alt="Empty order" />
               <p className='orders-content__description'>There is no any order.</p>
             </div> :
-            <div className='orders-content__container'>
+            <div className='orders-content__container2'>
               <ul className='orders-content__list'>
                 {
-                response.map((item, index) => (
-                  <li className='orders-content__item' key={index}>
-                    <p>Table: {item.tableId}</p>
-                    {/* <img className='orders-content__image' src={item.image} alt="item.name" />
-                    {item.name} - ${item.price}
-                    <p className='cart-content__description'>Quantity: {item.quantity}</p> */}
-                  </li>
-                ))}
+                  response.map((item, index) => (
+                    <li className='orders-content__item' key={index}>
+                      <p className='orders-content__description'>Table: {item.tableId}</p>
+                      {
+                        item.cart.map((food, index) => (
+                          <div className='orders-content__food-container' key={index + 100000}>
+                            <p>Item: {food.name}, Quantity: {food.quantity}</p>
+                          </div>
+                        ))
+                      }
+                    </li>
+                  ))}
               </ul>
             </div>
         }
