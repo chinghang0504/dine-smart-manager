@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import './FoodItems.scss';
 import { getAllFoodItems, deleteFoodItem } from '../../services/server';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function FoodItems() {
   const [foodItems, setFoodItems] = useState([]);
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   // Load the data
   async function loadData() {
@@ -23,10 +23,10 @@ function FoodItems() {
     }
   }
 
-  // // Click the edit button
-  // function clickEditButton(id) {
-  //   navigate(`/menu/fooditems/edit?id=${id}`);
-  // }
+  // Click the edit button
+  function clickEditButton(id) {
+    navigate(`/menu/fooditems/edit?id=${id}`);
+  }
 
   // Execute once
   useEffect(() => {
@@ -69,11 +69,17 @@ function FoodItems() {
             </div>
             <div className='food-items-item__content-container food-items-item__content-container--image'>
               <p className='food-items-item__title'>Image:</p>
-              { foodItem.image ? 
-                <img className='food-items-item__image' src={`${import.meta.env.VITE_SERVER_URL}/fooditems/${foodItem.image}`} alt={foodItem.name} /> :
-                <p className='food-items-item__description'>No image available</p>
+              {foodItem.image ?
+                <div>
+                  <img className='food-items-item__image' src={`${import.meta.env.VITE_SERVER_URL}/fooditems/${foodItem.image}`} alt={foodItem.name} />
+                  <p className='food-items-item__description'>{foodItem.image}</p>
+                </div>
+                :
+                <div>
+                  <img className='food-items-item__image' src={`${import.meta.env.VITE_SERVER_URL}/placeholder.png`} alt="No image available" />
+                  <p className='food-items-item__description'>No image available</p>
+                </div>
               }
-              <p className='food-items-item__description'>{foodItem.image}</p>
             </div>
             <div className='food-items-item__content-container'>
               <p className='food-items-item__title'>Priority:</p>
@@ -86,7 +92,7 @@ function FoodItems() {
             <div className='food-items-item__content-container'>
               <p className='food-items-item__title'>Actions:</p>
               <div className='food-items-item__action-container'>
-                {/* <button className="food-items-item__button food-items-item__button--edit" onClick={() => clickEditButton(foodItem.id)}><i className="bi bi-pencil"></i> Edit</button> */}
+                <button className="food-items-item__button food-items-item__button--edit" onClick={() => clickEditButton(foodItem.id)}><i className="bi bi-pencil"></i> Edit</button>
                 <button className="food-items-item__button food-items-item__button--delete" onClick={() => clickDeleteButton(foodItem.id)}><i className="bi bi-pencil"></i> Delete</button>
               </div>
             </div>
