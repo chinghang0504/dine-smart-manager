@@ -3,7 +3,7 @@ import './App.scss'
 import Header from './components/Header/Header';
 // import Orders from './pages/Orders/Orders';
 import Menu from './pages/Menu/Menu';
-// import Tools from './pages/Tools/Tools';
+import Tools from './pages/Tools/Tools';
 import FoodTypes from './components/FoodTypes/FoodTypes';
 import AddFoodType from './components/AddFoodType/AddFoodType';
 import EditFoodType from './components/EditFoodType/EditFoodType';
@@ -30,7 +30,7 @@ function App() {
             <Route path='fooditems/edit' element={<EditFoodItem />} />
             <Route path='*' element={<Navigate to="/menu/foodtypes" />} />
           </Route>
-          {/* <Route path="/tools" element={<Tools />} /> */}
+          <Route path="/tools" element={<Tools />} />
         </Routes>
       </BrowserRouter>
     </>
