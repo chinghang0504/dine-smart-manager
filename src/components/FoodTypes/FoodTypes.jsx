@@ -57,11 +57,17 @@ function FoodTypes() {
             </div>
             <div className='food-types-type__content-container food-types-type__content-container--image'>
               <p className='food-types-type__title'>Image:</p>
-              { foodType.image ? 
-                <img className='food-types-type__image' src={`${import.meta.env.VITE_SERVER_URL}/foodtypes/${foodType.image}`} alt={foodType.type} /> :
-                <p className='food-types-type__description'>No image available</p>
+              {foodType.image ?
+                <div>
+                  <img className='food-types-type__image' src={`${import.meta.env.VITE_SERVER_URL}/foodtypes/${foodType.image}`} alt={foodType.type} />
+                  <p className='food-types-type__description'>{foodType.image}</p>
+                </div>
+                :
+                <div>
+                  <img className='food-items-item__image' src={`${import.meta.env.VITE_SERVER_URL}/placeholder.png`} alt="No image available" />
+                  <p className='food-types-type__description'>No image available</p>
+                </div>
               }
-              <p className='food-types-type__description'>{foodType.image}</p>
             </div>
             <div className='food-types-type__content-container'>
               <p className='food-types-type__title'>Priority:</p>
