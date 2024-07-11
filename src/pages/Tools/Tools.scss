@@ -22,10 +22,10 @@
   padding-left: 16px;
   padding-right: 16px;
 
-  @include tablet {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+  // @include tablet {
+  //   flex-direction: row;
+  //   justify-content: space-between;
+  // }
 
   &__title {
     color: white;
@@ -42,9 +42,9 @@
   padding-left: 16px;
   padding-right: 16px;
 
-  @include tablet {
-    align-items: flex-start;
-  }
+  // @include tablet {
+  //   align-items: flex-start;
+  // }
 
   &__title {
     padding-bottom: 16px;
@@ -61,6 +61,31 @@
     &--table-num {
       text-align: center;
       margin-bottom: 32px;
+    }
+  }
+}
+
+// Tools Action Container
+.tools-action-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 16px;
+
+  &__button {
+    background-color: $primary-color-maxican-red;
+    color: white;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 16px;
+    border: none;
+    margin-left: 8px;
+    margin-right: 8px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $secondary-color-maxican-red;
     }
   }
 }
