@@ -3,7 +3,7 @@ import './Tools.scss';
 import QrCodeGenerator from '../../components/QrCodeGenerator/QrCodeGenerator';
 
 function Tools() {
-  const baseUrl = "https://google.com/menu/";
+  const baseUrl = import.meta.env.VITE_QR_BASE_URL;
   const tableNum = 1;
   const [url, setUrl] = useState(`${baseUrl}${tableNum}`);
   const baseUrlRef = useRef(null);
