@@ -99,7 +99,7 @@ function EditFoodItem() {
               <select className='edit-food-item-form__select' name="type" id="type">
                 {foodTypes.map((foodType, index) => {
                   return (
-                    <option key={index} value={foodType.type}>{foodType.type}</option>
+                    <option key={index} value={foodType.type} selected={ foodItem.type === foodType.type }>{foodType.type}</option>
                   )
                 })}
               </select>
